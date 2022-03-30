@@ -1,0 +1,18 @@
+{% extends 'AppBlog/base.html'%}
+
+{% block main_content %}
+    <h1>Crear Usuario</h1>
+    {% if formulario.errors %}
+        <p style="color:red ">Hay problemas con los datos cargados</pstyle></p>
+    {% endif %}
+    
+    <form action="/crearusuario/" method="POST">{% csrf_token %}
+        <table>
+            {{formulario}}
+        </table>
+        <input type="submit" value="CREAR">
+    </form>
+
+
+{% endblock main_content %}
+

@@ -1,0 +1,17 @@
+{% extends 'AppBlog/base.html'%}
+
+{% block main_content %}
+    <h1>Indtroduce informacion asi te conocemos mas!</h1>
+    {% if formulario.errors %}
+        <p style="color:red ">Hay problemas con los datos cargados</pstyle></p>
+    {% endif %}
+    
+    <form action="/infousuario/" method="POST">{% csrf_token %}
+        <table>
+            {{formulario}}
+        </table>
+        <input type="submit" value="Añadir">
+    </form>
+
+
+{% endblock main_content %}

@@ -1,0 +1,20 @@
+{% extends 'AppBlog/base.html'%}
+
+{% block main_content %}
+<form action="/buscar_titulo/" method="get">
+    {% csrf_token %}
+        
+    <input type="text" name="titulo">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if error %}<p style="color:red">{{error}}</p>{% endif %}
+
+{% if post %}
+    <p> Post encontrado: {{post.titulo}}</p>
+{% endif %}
+
+
+{% endblock main_content %}
